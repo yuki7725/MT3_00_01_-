@@ -38,8 +38,6 @@ inline float Length(const Vector3& v)
 
 inline Vector3 Normalize(const Vector3& v)
 {
-	
-	//return Vector3(v.x / float(sqrt(v.x)), v.y /*/ float(sqrt(v.y))*/, v.z / float(sqrt(v.z)));
 	return Vector3(v.x / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))), 
 		v.y / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))),
 		v.z / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))));
