@@ -32,14 +32,17 @@ inline float Dot(const Vector3& v1, const Vector3& v2)
 
 inline float Length(const Vector3& v)
 {
-	return float(sqrt(v.x) + sqrt(v.y) + sqrt(v.z));
+	return float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z)));
 }
 
 
 inline Vector3 Normalize(const Vector3& v)
 {
 	
-	return Vector3(v.x / float(sqrt(v.x)), v.y /*/ float(sqrt(v.y))*/, v.z / float(sqrt(v.z)));
+	//return Vector3(v.x / float(sqrt(v.x)), v.y /*/ float(sqrt(v.y))*/, v.z / float(sqrt(v.z)));
+	return Vector3(v.x / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))), 
+		v.y / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))),
+		v.z / float(sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z))));
 }
 
 static const int kColumnWidth = 60;
